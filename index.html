@@ -1,13 +1,13 @@
-hello hello1
-<h1>Sunt cel mai mare smecher</h1>
+<input id="nr1" />
+<input id="nr2" />
+<input id="rezultat" />
+<button onclick="suma()">Apasa să vezi suma</button>
 
-<input id="input" />
-<button onclick="test()">Apasa</button>
-<div id="rezultat"></div>
 <script>
-  function test() {
-    let valoare = document.getElementById("input").value;
-    let rezultat = document.getElementById("rezultat");
-    rezultat.innerText = valoare;
+  function suma() {
+    let numar1 = parseInt(document.getElementById("nr1").value);
+    let numar2 = parseInt(document.getElementById("nr2").value);
+    let sum = numar1 + numar2;
+    document.getElementById("rezultat").value = sum;
   }
 </script>
