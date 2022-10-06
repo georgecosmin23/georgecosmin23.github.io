@@ -1,18 +1,40 @@
 <h1>Calculator antic</h1>
-
+<div>
+  <p>Alegeti o operație din listă</p>
+  <select id="operatie" onchange="MyFunction()">
+    <option>Alege o operație</option>
+    <option value="add">Adunare</option>
+    <option value="takeaway">Scădere</option>
+    <option value="multiply">Înmultire</option>
+    <option value="divide">Împărțire</option>
+  </select>
+</div>
 <p>Introduceți primul număr</p>
 <div><input id="nr1" /></div>
 <p>Introduceți al doilea număr</p>
 <div><input id="nr2" /></div>
 <p>Rezultatul adunării este:</p>
 <div><input id="rezultat" /></div>
-<button onclick="suma()">Calculează</button>
+<button onclick="MyFunction()">Calculează</button>;
 
 <script>
-  function suma() {
+  function MyFunction() {
     let numar1 = parseInt(document.getElementById("nr1").value);
     let numar2 = parseInt(document.getElementById("nr2").value);
-    let sum = numar1 + numar2;
-    document.getElementById("rezultat").value = sum;
+
+    var x = document.getElementById("operatie").value;
+    if(x=="add"){
+      result=numar1+numar2;
+      document.getElementById("rezultat").value = result;
+    } else if (x=="takeaway"){
+      result=numar1-numar2;
+      document.getElementById("rezultat").value = result;
+    } else if(x=="multiply"){
+      result=numar1*numar2;
+      document.getElementById("rezultat").value = result;
+    } else (x=="divide") {
+      result=numar1/numar2;
+      document.getElementById("rezultat").value = result;
+    }
   }
 </script>
