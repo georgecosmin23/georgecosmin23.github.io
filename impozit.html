@@ -1,0 +1,53 @@
+<h1>Calculează impozitul tău auto</h1>
+<div>
+  <p>Selectează din listă orașul:</p>
+  <select id="oras" onchange="MyFunction()">
+    <option>Oraș</option>
+    <option value="Moldova">Galați</option>
+    <option value="Capitala">București</option>
+    <option value="Moldova">Iași</option>
+  </select>
+</div>
+<div>
+  <p>Selectează din listă capacitatea cilindrică:</p>
+  <select id="motor" onchange="MyFunction()">
+    <option>capacitate cilindrică</option>
+    <option value="mic">sub 2000 cmc</option>
+    <option value="mediu">2000-2200 cmc</option>
+    <option value="mare">peste 2500 cmc</option>
+  </select>
+</div>
+<p></p>
+<div><button onclick="MyFunction()">Calculează</button></div>
+<p id="demo"></p>
+<script>
+  function MyFunction() {
+    var x = document.getElementById("oras").value;
+    var y = document.getElementById("motor").value;
+    if (x == "Moldova" && y == "mic") {
+      document.getElementById("demo").innerHTML =
+        "Impozitul pentru capacitatea cilindrică selectată este: 200 de lei.";
+    } else if (x == "Moldova" && y == "mediu") {
+      document.getElementById("demo").innerHTML =
+        "Impozitul pentru capacitatea cilindrică selectată este: 800 de lei.";
+    } else if (x == "Moldova" && y == "mare") {
+      document.getElementById("demo").innerHTML =
+        "Impozitul pentru capacitatea cilindrică selectată este: 2500 de lei.";
+    } else if (x == "multiply") {
+      result = numar1 * numar2;
+      document.getElementById("rezultat").value = result;
+    } else if (x == "divide") {
+      result = numar1 / numar2;
+      document.getElementById("rezultat").value = result;
+    } else if (x == "Capitala" && y == "mic") {
+      document.getElementById("demo").innerHTML =
+        "Impozitul pentru capacitatea cilindrică selectată este: 200 de lei.";
+    } else if (x == "Capitala" && y == "mare") {
+      document.getElementById("demo").innerHTML =
+        "Impozitul pentru capacitatea cilindrică selectată este: 2500 de lei.";
+    } else if (x == "Capitala" && y == "mediu") {
+      document.getElementById("demo").innerHTML =
+        "Impozitul pentru capacitatea cilindrică selectată este: 800 de lei.";
+    }
+  }
+</script>
