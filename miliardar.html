@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vrei sa fii miliardar?</title>
+  </head>
+  <body>
+    <h1>Vrei să fii miliardar?</h1>
+
+    <div>
+      <h5 id="quest"></h5>
+      <button onclick="answers(0)" id="anw1"></button>
+      <button onclick="answers(1)" id="anw2"></button>
+      <button onclick="answers(2)" id="anw3"></button>
+      <button onclick="answers(3)" id="anw4"></button>
+    </div>
+    <div><p onclick="tineScor()"></p></div>
+    <div>
+      <p>Raspunsuri gresite:<a id="raspunsGresit"></a></p>
+    </div>
+    <div>
+      <p>Raspunsuri corecte:<a id="raspunsCorect"></a></p>
+    </div>
+    <script>
+      let intrebareCurenta = 0;
+      let score = 0;
+      let raspunsGresit = 0;
+      let raspunsCorect = 0;
+      function setquestions(question) {
+        let quest = document.getElementById("quest");
+        quest.innerHTML = question.intrebare;
+        let anw1 = document.getElementById("anw1");
+        anw1.innerHTML = question.variante[0];
+        let anw2 = document.getElementById("anw2");
+        anw2.innerHTML = question.variante[1];
+        let anw3 = document.getElementById("anw3");
+        anw3.innerHTML = question.variante[2];
+        let anw4 = document.getElementById("anw4");
+        anw4.innerHTML = question.variante[3];
+      }
+
+      function answers(answer) {
+        if (answer == a[intrebareCurenta].variantaCorecta) {
+          raspunsCorect += 1;
+        } else {
+          raspunsGresit += 1;
+        }
+        intrebareCurenta += 1;
+        setquestions(a[intrebareCurenta]);
+      }
+
+      a = [
+        {
+          intrebare: "Care este capitala României?",
+          variante: ["Galati", "București", "Iași", "Argeș"],
+          variantaCorecta: 1,
+        },
+        {
+          intrebare: "Cea mai buna masina4?",
+          variante: ["Trabant", "BMW", "Mercedes", "Audi"],
+          variantaCorecta: 2,
+        },
+        {
+          intrebare: "Cea mai buna masina3?",
+          variante: ["Trabant", "BMW", "Mercedes", "Audi"],
+          variantaCorecta: 0,
+        },
+        {
+          intrebare: "Cea mai buna masina2?",
+          variante: ["Trabant", "BMW", "Mercedes", "Audi"],
+          variantaCorecta: 3,
+        },
+        {
+          intrebare: "Cea mai buna masina1?",
+          variante: ["Trabant", "BMW", "Mercedes", "peu"],
+          variantaCorecta: 1,
+        },
+      ];
+      setquestions(a[intrebareCurenta]);
+    </script>
+  </body>
+</html>
